@@ -1,18 +1,43 @@
 ﻿@page
 @model VillaWebApp.Pages.HomeModel
 
+<div >
+    <h1>Home page to display villas</h1>
+    <button class="float-end bg-primary mb-2 text-light border-0">Add</button>
+</div>
 
-<h1>Home page to display villas</h1>
 
 <table class="table">
     <thead>
         <tr>
             <th>Name</th>
-            <th>Email</th>
+            <th>Details</th>
+            <th>Rate</th>
+            <th>Amenity</th>
+            <th>Occupancy</th>
+            <th>Sqft</th>
+            <th>Edit</th>
+            <th>Delete</th>
         </tr>
     </thead>
     <tbody>
-       
+       @foreach(var villa in Model.villas)
+        {
+            <tr>
+                <td>@villa.Name</td>
+                <td>@villa.Details</td>
+                <td>@villa.Rate</td>
+                <td>@villa.Amenity</td>
+                <td>@villa.Occupancy</td>
+                <td>@villa.Sqft</td>
+                <td>
+                    <button class="bg-info text-light border-0">Edit</button>
+                </td >
+                <td>
+                    <button class="bg-danger text-light border-0">Delete</button>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
 

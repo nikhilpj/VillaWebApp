@@ -12,10 +12,18 @@ namespace VillaWebApp.Services
 
         public async Task<List<Villa>> GetVillasAsync()
         {
-            var response = await _httpClient.GetAsync("https://localhost:7266/api/VillaApi");
-            response.EnsureSuccessStatusCode();
-            var villas = await response.Content.ReadFromJsonAsync<List<Villa>>();
-            return villas;
+            try
+            {
+                var response = await _httpClient.GetAsync("https://localhost:7266/api/VillaApi");
+                response.EnsureSuccessStatusCode();
+                var villas = await response.Content.ReadFromJsonAsync<List<Villa>>();
+                return villas;
+            }
+            catch (HttpRequestException ex)
+            {
+                return new List<Villa>();
+            }
+            
 
         }
     }
