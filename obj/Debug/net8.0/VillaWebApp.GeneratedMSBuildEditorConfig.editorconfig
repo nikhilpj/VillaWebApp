@@ -18,6 +18,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Lenovo\Desktop\Nikhil\Razor1\WebApp\VillaWebApp
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Lenovo/Desktop/Nikhil/Razor1/WebApp/VillaWebApp/Pages/AddVilla.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkVmlsbGEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Lenovo/Desktop/Nikhil/Razor1/WebApp/VillaWebApp/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

@@ -3,7 +3,7 @@
 
 <div >
     <h1>Home page to display villas</h1>
-    <button class="float-end bg-primary mb-2 text-light border-0">Add</button>
+    <button class="float-end bg-primary mb-2 text-light border-0" onclick="window.location.href='@Url.Page("/AddVilla")'">Add</button>
 </div>
 
 
@@ -13,7 +13,7 @@
             <th>Name</th>
             <th>Details</th>
             <th>Rate</th>
-            <th>Amenity</th>
+            
             <th>Occupancy</th>
             <th>Sqft</th>
             <th>Edit</th>
@@ -27,11 +27,11 @@
                 <td>@villa.Name</td>
                 <td>@villa.Details</td>
                 <td>@villa.Rate</td>
-                <td>@villa.Amenity</td>
-                <td>@villa.Occupancy</td>
+               
+                <td class="text-center">@villa.Occupancy</td>
                 <td>@villa.Sqft</td>
                 <td>
-                    <button class="bg-info text-light border-0">Edit</button>
+                    <button class="bg-info text-light border-0" >Edit</button>
                 </td >
                 <td>
                     <button class="bg-danger text-light border-0">Delete</button>
