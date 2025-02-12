@@ -31,7 +31,7 @@
                 <td class="text-center">@villa.Occupancy</td>
                 <td>@villa.Sqft</td>
                 <td>
-                    <button class="bg-info text-light border-0" >Edit</button>
+                    <a class="bg-info text-light border-0" asp-page="./Edit" asp-route-id="@villa.Id">Edit</a>
                 </td >
                 <td>
                     <button class="bg-danger text-light border-0">Delete</button>
