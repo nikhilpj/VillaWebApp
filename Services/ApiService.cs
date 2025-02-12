@@ -34,14 +34,18 @@ namespace VillaWebApp.Services
         {
             try
             {
+                Console.WriteLine("value of villa", villa);
                 var villaJson = new StringContent(JsonSerializer.Serialize(villa), Encoding.UTF8, "application/json");
                 var response = await _httpClient.PostAsync("https://localhost:7266/api/VillaApi", villaJson);
                 response.EnsureSuccessStatusCode();
+              
                 var createdVilla = await response.Content.ReadFromJsonAsync<Villa>();
+               
                 return createdVilla;
             }
             catch (HttpRequestException ex)
             {
+                Console.WriteLine("error is the following",ex.Message);
                 return new Villa();
             }
            

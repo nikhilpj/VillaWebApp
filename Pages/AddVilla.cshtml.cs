@@ -19,14 +19,15 @@ namespace VillaWebApp.Pages
         {
         }
 
-        public async Task<IActionResult> OnPost()
+        public async Task<IActionResult> OnPost(Villa Villa)
         {
             var created = await _apiService.PostVillasAsync(Villa);
-
+           
             if (created != null)
             {
                 // Redirect to the Home page or any other page after a successful submission
                 return RedirectToPage("/Home");
+
             }
 
             return Page();
