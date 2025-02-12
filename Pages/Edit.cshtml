@@ -6,9 +6,10 @@
 <h1>Edit Villa</h1>
 
 <form method="post">
+   
 <div class="form-group">
          <label>Name</label>
-        <input type="text" class="form-control"  asp-for="villa.Name"/>
+        <input type="text" class="form-control"  asp-for="villa.Name" />
         </div>
     <div class="form-group">
          <label>Description</label>
@@ -16,15 +17,15 @@
          </div>
     <div class="form-group">
         <label>Rate</label>
-        <input type="number" class="form-control"  asp-for="villa.Rate"/>
+        <input type="number" class="form-control"  asp-for="villa.Rate" />
         </div>
     <div class="form-group">
         <label>Imageurl</label>
-        <input type="text" class="form-control" asp-for="villa.ImageUrl" />
+        <input type="text" class="form-control" asp-for="villa.ImageUrl"  />
         </div>
     <div class="form-group">
         <label>Occupancy</label>
-        <input type="number" class="form-control" asp-for="villa.Occupancy" />
+        <input type="number" class="form-control" asp-for="villa.Occupancy"  />
         </div>
     <div class="form-group">
         <label>Sqft</label>
@@ -32,10 +33,47 @@
         </div>
     <div class="form-group">
         <label>Amenities</label>
-        <input type="text" class="form-control" asp-for="villa.Amenity" />
+        <input type="text" class="form-control" asp-for="villa.Amenity"  />
         </div>
-        <button type="submit">Save</button>
+        <button type="submit" id="saveButton">Save</button>
 
 </div>
 </form>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () { 
+        const saveButton = document.getElementById('saveButton');
+
+        saveButton.addEventListener('click', function () { 
+        
+            const villaData = {
+                Name : document.querySelector('input[name="villa.Name"]').value,
+                Details: document.querySelector('input[name="villa.Details"]').value,
+                Rate: document.querySelector('input[name="villa.Rate"]').value,
+                ImageUrl : document.querySelector('input[name=villa.ImageUrl]').value,
+                Occupancy: document.querySelector('input[name=villa.Occupancy]').value,
+                Sqft : document.querySelector('input[name=villa.Sqft]').value,
+                Amenities:document.querySelector('input[name=villa.Amenities]').value
+
+
+            }
+
+            const villaId = '@Model.villa.Id';
+
+            fetch(`https://localhost:7266/api/VillaApi/${villaId}`, {
+                method:'PUT',
+                headers: {
+                    'Content-Type':"application/json" 
+                },
+                body: {
+                    JSON.stringify(villaData)
+                }
+            })
+            
+        })
+    })
+</script>
+
+
+
 

@@ -10,6 +10,7 @@
 <table class="table">
     <thead>
         <tr>
+            <th>Id</th>
             <th>Name</th>
             <th>Details</th>
             <th>Rate</th>
@@ -24,6 +25,7 @@
        @foreach(var villa in Model.villas)
         {
             <tr>
+                <td>@villa.Id</td>
                 <td>@villa.Name</td>
                 <td>@villa.Details</td>
                 <td>@villa.Rate</td>

@@ -51,6 +51,36 @@ namespace VillaWebApp.Services
            
         }
 
+        public async Task<Villa> GetVilla(int id)
+        {
+            var response = await _httpClient.GetAsync($"https://localhost:7266/api/VillaApi/{id}");
+            response.EnsureSuccessStatusCode();
+            var existingVilla = await response.Content.ReadFromJsonAsync<Villa>();
+            return existingVilla;
+            
+        }
+
+       public async Task<bool> UpdateVilla(int id, Villa villa)
+        {
+            try
+            {
+                if(villa.Id != id)
+                {
+                    throw new ArgumentException("Villa ID mismatch");
+                }
+                var villaJson = new StringContent(JsonSerializer.Serialize(villa), Encoding.UTF8, "application/json");
+                var response = await _httpClient.PutAsync($"https://localhost:7266/api/VillaApi/{id}", villaJson);
+                response.EnsureSuccessStatusCode();
+                return true;
+            }
+            catch (HttpRequestException ex)
+            {
+                Console.WriteLine("error in updating", ex.Message);
+                return false;
+            }
+           
+        }
+
         
     }
 }
