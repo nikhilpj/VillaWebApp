@@ -40,39 +40,6 @@
 </div>
 </form>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () { 
-        const saveButton = document.getElementById('saveButton');
-
-        saveButton.addEventListener('click', function () { 
-        
-            const villaData = {
-                Name : document.querySelector('input[name="villa.Name"]').value,
-                Details: document.querySelector('input[name="villa.Details"]').value,
-                Rate: document.querySelector('input[name="villa.Rate"]').value,
-                ImageUrl : document.querySelector('input[name=villa.ImageUrl]').value,
-                Occupancy: document.querySelector('input[name=villa.Occupancy]').value,
-                Sqft : document.querySelector('input[name=villa.Sqft]').value,
-                Amenities:document.querySelector('input[name=villa.Amenities]').value
-
-
-            }
-
-            const villaId = '@Model.villa.Id';
-
-            fetch(`https://localhost:7266/api/VillaApi/${villaId}`, {
-                method:'PUT',
-                headers: {
-                    'Content-Type':"application/json" 
-                },
-                body: {
-                    JSON.stringify(villaData)
-                }
-            })
-            
-        })
-    })
-</script>
 
 
 

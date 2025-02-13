@@ -7,6 +7,7 @@ builder.Services.AddRazorPages();
 builder.Services.AddHttpClient();
 builder.Services.AddScoped<ApiService>();
 
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

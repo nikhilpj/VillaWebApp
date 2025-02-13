@@ -15,9 +15,7 @@ namespace VillaWebApp.Pages
         }
 
         public Villa Villa { get; set; }
-        public void OnGet()
-        {
-        }
+      
 
         public async Task<IActionResult> OnPost(Villa Villa)
         {
