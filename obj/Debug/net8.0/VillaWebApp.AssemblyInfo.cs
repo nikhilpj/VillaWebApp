@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("VillaWebApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+13686aa4c3109da7ce60c652235a5545647a7249")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2f1555e78609f871ef1d4eeef987ef804e8c403c")]
 [assembly: System.Reflection.AssemblyProductAttribute("VillaWebApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("VillaWebApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

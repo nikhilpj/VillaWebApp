@@ -2,38 +2,63 @@
 @model VillaWebApp.Pages.AddVillaModel
 
 
-<h1>Create Villa</h1>
+<h1>Add Villa</h1>
 
 <form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 <div class="form-group">
          <label>Name</label>
-        <input type="text" class="form-control"  asp-for="Villa.Name"/>
+        <input type="text" class="form-control"  asp-for="Villa.Name" id="names"/>
+        <span asp-validation-for="Villa.Name" class="text-danger"></span>
         </div>
     <div class="form-group">
          <label>Description</label>
-        <input type="text" class="form-control" asp-for="Villa.Details" />
+        <input type="text" class="form-control" asp-for="Villa.Details" id="details" />
+        <span asp-validation-for="Villa.Details" class="text-danger"></span>
          </div>
     <div class="form-group">
         <label>Rate</label>
-        <input type="number" class="form-control"  asp-for="Villa.Rate"/>
+        <input type="number" class="form-control"  asp-for="Villa.Rate" id="rate"/>
+        <span asp-validation-for="Villa.Rate" class="text-danger"></span>
         </div>
     <div class="form-group">
         <label>Imageurl</label>
-        <input type="text" class="form-control" asp-for="Villa.ImageUrl" />
+        <input type="text" class="form-control" asp-for="Villa.ImageUrl" id="image"/>
+        <span asp-validation-for="Villa.ImageUrl" class="text-danger"></span>
         </div>
     <div class="form-group">
         <label>Occupancy</label>
-        <input type="number" class="form-control" asp-for="Villa.Occupancy" />
+        <input type="number" class="form-control" asp-for="Villa.Occupancy"  id="occupancy"/>
+        <span asp-validation-for="Villa.Occupancy" class="text-danger"></span>
         </div>
     <div class="form-group">
         <label>Sqft</label>
-        <input type="number" class="form-control" asp-for="Villa.Sqft" />
+        <input type="number" class="form-control" asp-for="Villa.Sqft" id="sqft"/>
+        <span asp-validation-for="Villa.Sqft" class="text-danger"></span>
         </div>
     <div class="form-group">
         <label>Amenities</label>
-        <input type="text" class="form-control" asp-for="Villa.Amenity" />
+        <input type="text" class="form-control" asp-for="Villa.Amenity" id="amenity"/>
+        <span asp-validation-for="Villa.Amenity" class="text-danger"></span>
         </div>
-        <button type="submit">Save</button>
+        <button type="submit" class="mt-2 ">Save</button>
 
 </div>
 </form>
+
+<script>
+    const names = document.getElementById("name");
+    console.log(names.value);
+    const details = document.getElementById("details");
+    console.log(details.value);
+    const rate = document.getElementById("rate");
+    console.log(rate.value);
+    const image = document.getElementById("image");
+    console.log(image.value);
+    const occupancy = document.getElementById("occupancy");
+    console.log(occupancy.value);
+    const sqft = document.getElementById("sqft");
+    console.log(sqft).value;
+    const amenity = document.getElementById("amenity")
+    console.log(amenity);
+</script>

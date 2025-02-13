@@ -2,7 +2,7 @@
 @model VillaWebApp.Pages.HomeModel
 
 <div >
-    <h1>Home page to display villas</h1>
+    <h1>Display villas</h1>
     <button class="float-end bg-primary mb-2 text-light border-0" onclick="window.location.href='@Url.Page("/AddVilla")'">Add</button>
 </div>
 
@@ -55,9 +55,10 @@
 
          }).then(response => { 
              console.log(response) 
-             if (response.ok) { 
+             if (response.ok) {
                  window.location.href = "/Home";
              }
+             
          })
              .catch(error => console.log(error));
          

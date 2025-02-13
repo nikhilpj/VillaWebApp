@@ -20,6 +20,10 @@ namespace VillaWebApp.Pages
         public async Task<IActionResult> OnPost(Villa Villa)
         {
             var created = await _apiService.PostVillasAsync(Villa);
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
            
             if (created != null)
             {
