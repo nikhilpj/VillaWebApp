@@ -10,6 +10,8 @@ namespace VillaWebApp.Pages
         private readonly ApiService _apiService;
         [BindProperty]
         public Villa villa {  get; set; }
+        [BindProperty(SupportsGet=true)]
+        public int Id { get; set; }
 
         public EditModel(ApiService apiService)
         {
@@ -22,8 +24,8 @@ namespace VillaWebApp.Pages
 
         public async Task<IActionResult> OnPost()
         {
-           
-            
+
+                villa.Id = Id;
                 var status = await _apiService.UpdateVilla(villa.Id, villa);
                 Console.WriteLine("status is", status);
                 if (status)
